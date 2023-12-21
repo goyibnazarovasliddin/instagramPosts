@@ -1,7 +1,7 @@
 body { 
     margin: 0; 
     color: WHITE ; 
-    background: url(rasm/back-pic.jpg); 
+    background: url(pictures/back-pic.jpg); 
     font: 600 16px/18px "Open Sans", sans-serif; 
     display: flex;
     justify-content: center;
