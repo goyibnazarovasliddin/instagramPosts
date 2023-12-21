@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Bottom Navbar</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="nav-collapse">
+        <div class="nav-item">
+          <i class="fas fa-camera"></i>
+        </div>
+        <div class="nav-item">
+          <i class="fas fa-image"></i>
+        </div>
+        <div class="nav-item">
+          <i class="fas fa-film"></i>
+        </div>
+      </div>
+      
+      <nav class="nav">
+        <div class="nav-item">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </div>
+        <div class="nav-item">
+          <i class="fas fa-magnifying-glass"></i>
+          <span>Search</span>
+        </div>
+        <div class="nav-item hidden">
+          <i class="fas fa-magnifying-glass"></i>
+          <span>Search</span>
+        </div>
+        <div class="nav-item btn">
+          <button>
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="nav-item">
+          <i class="fas fa-heart"></i>
+          <span>Likes</span>
+        </div>
+        <div class="nav-item">
+          <i class="fas fa-user"></i>
+          <span>Profile</span>
+        </div>
+      </nav>
+    </div>
+
+    <script>
+      let wrapper = document.querySelector(".wrapper");
+      let btn = document.querySelector("button");
+
+      btn.addEventListener("click", () => {
+        wrapper.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

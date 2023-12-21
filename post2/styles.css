@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ccc;
+  font-size: 62.5%;
+}
+
+.wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper .nav {
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  background: rgb(10, 62, 30);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.wrapper .nav-item {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.wrapper .nav-item i {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.wrapper .nav .nav-item span {
+  text-transform: uppercase;
+}
+
+.wrapper .nav .nav-item.hidden {
+  opacity: 0;
+}
+
+.wrapper .nav .nav-item.btn {
+  position: absolute;
+  background: #ccc;
+  transform: translateY(-55%) rotate(45deg);
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
+.wrapper .nav .nav-item button {
+  width: 5rem;
+  height: 5rem;
+  background: rgb(10, 62, 30);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wrapper.active .nav .nav-item button {
+  transform: rotate(-45deg);
+}
+
+.wrapper .nav .nav-item button i {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.wrapper.active .nav .nav-item button i {
+  transform: scale(0.9);
+}
+
+.wrapper .nav-collapse {
+  width: 6rem;
+  height: 6rem;
+  background: rgb(10, 62, 30);
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: -1;
+  transform: translateY(100%);
+  transition: 0.2s ease-in;
+}
+
+.wrapper.active .nav-collapse {
+  width: 20rem;
+  z-index: 10;
+  transform: translateY(-105%);
+}
+
+.nav-collapse .nav-item {
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.wrapper.active .nav-collapse .nav-item {
+  opacity: 1;
+  background: transparent;
+}
+
+.nav-collapse .nav-item:nth-child(1) {
+  transform: translateX(100%);
+}
+
+.wrapper.active .nav-collapse .nav-item:nth-child(1) {
+  transform: translateX(0);
+}
+
+.nav-collapse .nav-item:nth-child(3) {
+  transform: translateX(-100%);
+}
+
+.wrapper.active .nav-collapse .nav-item:nth-child(3) {
+  transform: translateX(0);
+}
+
+.nav-collapse .nav-item i {
+  margin: 0;
+}

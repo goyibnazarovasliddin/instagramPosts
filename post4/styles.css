@@ -1,0 +1,257 @@
+body {
+    background: url(pictures/newPost4Back.jpg);
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+body form, div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+form:first-child {
+    position: relative;
+
+}
+
+.imgSanta {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 5px;
+}
+
+img {
+    position: absolute;
+}
+
+.imgMid {
+    width: 80px;
+    height: 80px;
+    top: 25px;
+    right: 120px;    
+}
+
+.imgFoot {
+    width: 84px;
+    height: 80px;
+    top: 73px;
+    right: 115px;   
+    transform: rotate(4deg);
+}
+
+.imgHead {
+    z-index: 1;
+    width: 80px;
+    height: 80px;
+    top: -8px;
+    right: 112px;   
+    transform: translateX(5px);
+}
+
+.imgLeft {
+    width: 80px;
+    height: 80px;
+    top: 15px;
+    left: 144px;   
+    transform: rotate(22deg);
+}
+
+.imgRight {
+    width: 60px;
+    height: 60px;
+    top: 45px;
+    right: 115px;   
+    transform: rotate(13deg) translate(1px, -2px);
+    animation: santaHand 2s ease-out infinite;
+    z-index: 2;
+}
+
+body form div h1 {
+    font-variant: small-caps;
+    font-family:'Courier New', Courier, monospace;
+    color: white;
+    padding-top: 105px;
+    text-decoration: overline;
+    z-index: 3;
+    margin-bottom: 0;
+}
+
+form {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    width: 400px;
+    height: 600px;
+    border: solid white medium;
+    border-radius: 20px;
+
+}
+
+label {
+    font-variant: small-caps;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 22px;
+    color: white;
+}
+
+input {
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+    border: white 2px solid;
+    background: none;
+    font-size: 15px;
+    text-indent: 10px;
+    color: white;
+    box-shadow: 0px 0px 10px whitesmoke;
+}
+
+input:focus {
+    outline: none;
+    border-color: rgb(8, 107, 201);
+    width: 330px;
+    transition: all 0.25s;
+    box-shadow: 0px 0px 10px white,
+                0px 0px 20px white,
+                0px 0px 30px white;
+}
+
+input::placeholder {
+    font-family: 'Courier New', Courier, monospace;
+    font-variant: small-caps;
+    color: white;
+    text-indent: 10px;
+    font-size: 20px;
+}
+
+button {
+    width: 150px;
+    height: 35px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-variant: small-caps;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 16px;
+    animation: forButton 1.5s linear infinite;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    animation: none;
+    transform: scale(1.1);
+    border: 1px solid white;
+    transition: all 0.2s;
+    box-shadow: 0px 0px 5px white,
+                    0px 0px 10px white,
+                    0px 0px 15px white,
+                    0px 0px 20px white;
+}
+
+button:active {
+    opacity: 0.7;
+}
+
+.snow{
+    position: absolute;
+    top:0;
+    left:0;
+    width:50px;
+    height:50px;
+    background-image: url(pictures/snow.png);
+    background-size: cover;
+    animation: animationSnow 5s linear infinite;
+    z-index: 10;
+}
+
+@keyframes animationSnow{
+    0%{
+        transform: translate(0,0);
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 1;
+    }
+    75% {
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+        transform: translate(100px, 100vh);
+    }
+}
+
+@keyframes santaHand {
+    50% {
+        transform: rotate(40deg) translate(-2px, -2px);
+    } 
+    100% {
+        transform: rotate(13deg) translate(1px, -2px);
+    }
+}
+
+@keyframes forButton {
+    0% {
+        box-shadow: none;
+    }
+    10% {
+        box-shadow: 0px 0px 5px white;
+    }
+    20% {
+        box-shadow: 0px 0px 5px white,
+                    0px 0px 10px white;
+    }
+    30% {
+        box-shadow: 0px 0px 5px white,
+                    0px 0px 10px white,
+                    0px 0px 15px white;
+    }
+    40% {
+        box-shadow: 0px 0px 5px white,
+                    0px 0px 10px white,
+                    0px 0px 15px white,
+                    0px 0px 20px white;
+    }
+    50% {
+        box-shadow: 0px 0px 5px white,
+                    0px 0px 10px white,
+                    0px 0px 15px white,
+                    0px 0px 20px white,
+                    0px 0px 25px white;
+    }
+    60% {
+        box-shadow: 0px 0px 5px white,
+                    0px 0px 10px white,
+                    0px 0px 15px white,
+                    0px 0px 20px white;
+    }
+    70% {
+        box-shadow: 0px 0px 5px white,
+                    0px 0px 10px white,
+                    0px 0px 15px white;
+    }
+    80% {
+        box-shadow: 0px 0px 5px white,
+                    0px 0px 10px white,
+    }
+    90% {
+        box-shadow: 0px 0px 5px white;
+    }
+    100% {
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,215 @@
+/* save a css file as newPost3.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+}
+
+.card {
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3),
+                0px 0px 25px rgba(0, 0, 0, 0.3),
+                0px 0px 35px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+#profil-pic {
+    width: 210px;
+    height: 210px;
+    background-color: rgb(22, 214, 22);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgb(22, 214, 22),
+                0px 0px 15px rgb(22, 214, 22),
+                0px 0px 25px rgb(22, 214, 22);
+    margin: 20px;
+    transition: all 0.15s;
+}
+
+#profil-pic:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 25px rgb(22, 214, 22),
+                0px 0px 30px rgb(22, 214, 22),
+                0px 0px 38px rgb(22, 214, 22);
+}
+
+#pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.15s;
+    cursor: pointer;
+}
+
+#pic:hover {
+    transform: scale(1.1);
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family:Verdana, Tahoma, sans-serif;
+    color: rgb(22, 214, 22);
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border: solid 1px grey;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3),
+                0px 0px 15px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    padding: 15px;
+    transition: all 0.15s;
+}
+
+.information:hover {
+    transform: scale(1.03);
+}
+
+.information span {
+    margin: 5px;
+}
+
+.card .buttons {
+    display: flex;
+    column-gap: 40px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.buttons button {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: white;
+    border: 1px grey solid;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3),
+                0px 0px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.15s;
+}
+
+/* this is the first variant */
+/* .buttons button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 5px rgb(22, 214, 22),
+                0px 0px 15px rgb(22, 214, 22);
+    border: none;
+} */
+
+#telegram #telegram-button {
+    color: rgb(24, 178, 255);
+}
+
+#telegram #telegram-button:hover {
+    color: white;
+    background-color: rgb(24, 178, 255);
+    border: none;
+    box-shadow: 0px 0px 5px rgb(24, 178, 255),
+                0px 0px 15px rgb(24, 178, 255);
+}
+
+#telegram #telegram-button:active {
+    opacity: 0.7;
+}
+
+#instagram #instagram-button {
+    color: rgb(217, 62, 116);
+}
+
+#instagram #instagram-button:hover {
+    color: white;
+    border: none;
+    background-color: rgb(217, 62, 116);
+    box-shadow: 0px 0px 5px rgb(217, 62, 116),
+                0px 0px 15px rgb(217, 62, 116);
+}
+
+#instagram #instagram-button:active {
+    opacity: 0.7;
+}
+
+#youtube #youtube-button {
+    color: rgb(255, 0, 0);
+}
+
+#youtube #youtube-button:hover {
+    color: white;
+    border: none;
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0px 0px 5px rgb(255, 0, 0),
+                0px 0px 15px rgb(255, 0, 0);
+}
+
+#youtube #youtube-button:active {
+    opacity: 0.7;
+}
+
+.btns {
+    display: flex;
+    column-gap: 20px;
+    margin: 30px;
+}
+
+.btns button {
+    width: 120px;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background-color: rgb(22, 214, 22);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.btns button:hover {
+    transform: scale(1.1);
+    color: rgb(22, 214, 22);
+    background-color: white;
+    border: solid 1px rgb(22, 214, 22);
+    font-weight: bold;
+    box-shadow: 0px 0px 5px rgb(22, 214, 22),
+                0px 0px 15px rgb(22, 214, 22);
+}
+
+.btns button:active {
+    opacity: 0.5;
+}
+
+.stats {
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin: 10px;
+}
+
+.stats div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.stats div p {
+    margin: 5px;
+}
