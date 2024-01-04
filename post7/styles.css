@@ -1,0 +1,208 @@
+:root {
+  --Ltpink: hsl(0, 75%, 63%);
+  --tyellow: hsl(38, 88%, 55%);
+  --white: hsl(334, 7%, 95%);
+  --green: hsl(130, 77%, 40%);
+}
+  
+body {
+  background: hsl(224, 32%, 12%);
+  background-image: conic-gradient(
+    from 0deg at 50% 50%,
+    blue,
+    purple,
+    purple,
+    blue
+  );
+  background-blend-mode: multiply;
+  min-block-size: 100dvh;
+  display: grid;
+  place-items: center;
+}
+
+pre {
+  --selector: var(--Ltpink);
+  --property: var(--tyellow);
+  --punctuation: var(--white);
+  --undefined: var(--green);
+
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--undefined);
+  background: hsl(222, 45%, 7%);
+  padding: 2rem;
+  border-radius: 1rem;
+
+  position: relative;
+
+  transform-style: preserve-3d;
+  transform: 
+    perspective(5000px) 
+    rotateY(var(--rotateX)) 
+    rotateX(var(--rotateY));
+}
+
+pre > * {
+  text-shadow: 0 0 0.3em currentColor;
+}
+
+pre::before,
+pre::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+
+pre::before {
+  inset: -0.3rem;
+  border-radius: inherit;
+  background: black;
+  z-index: -1;
+  transform: translateZ(-50px);
+  filter: blur(15px);
+  opacity: 0.9;
+}
+
+pre::after {
+  z-index: -2;
+  inset: -1.5rem;
+  background: linear-gradient(-45deg, red, blue);
+  transform: translateZ(-50px);
+}
+
+.selector {
+  color: var(--selector);
+}
+
+.property {
+  color: var(--property);
+}
+
+.punctuation {
+  color: var(--punctuation);
+}
+
+.property + .punctuation {
+  color: var(--property);
+}
+
+.pre-container {
+  position: relative;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+/* using only css, using this comment out the first one in html file */
+
+/* .css-only pre {
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  transition: transform 200ms linear;
+}
+
+.pre-container.css-only > div {
+  z-index: 10;
+  position: absolute;
+  outline: 1px solid lime;
+}
+
+.pre-container.css-only > div:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(2) {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(3) {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(4) {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(5) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(6) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(7) {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(8) {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(9) {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(1):hover ~ pre {
+  --rotateX: -30deg;
+  --rotateY: 30deg;
+}
+
+.pre-container.css-only > div:nth-child(2):hover ~ pre {
+  --rotateX: 0deg;
+  --rotateY: 30deg;
+}
+
+.pre-container.css-only > div:nth-child(3):hover ~ pre {
+  --rotateX: 30deg;
+  --rotateY: 30deg;
+}
+
+.pre-container.css-only > div:nth-child(4):hover ~ pre {
+  --rotateX: -30deg;
+  --rotateY: 0deg;
+}
+
+.pre-container.css-only > div:nth-child(5):hover ~ pre {
+  --rotateX: 0deg;
+  --rotateY: 0deg;
+}
+
+.pre-container.css-only > div:nth-child(6):hover ~ pre {
+  --rotateX: 30deg;
+  --rotateY: 0deg;
+}
+
+.pre-container.css-only > div:nth-child(7):hover ~ pre {
+  --rotateX: -30deg;
+  --rotateY: -30deg;
+}
+
+.pre-container.css-only > div:nth-child(8):hover ~ pre {
+  --rotateX: 0deg;
+  --rotateY: -30deg;
+}
+
+.pre-container.css-only > div:nth-child(9):hover ~ pre {
+  --rotateX: 30deg;
+  --rotateY: -30deg;
+} */
+
+
