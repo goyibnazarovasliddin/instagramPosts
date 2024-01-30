@@ -26,69 +26,69 @@ body {
     height: var(--w-size);
     background-color: transparent;
     border: none;
+}
 
-    .box.wrap {
-        width: var(--box-wrapper-width);
-        height: var(--box-wrapper-height);
-        margin: var(--box-wrapper-margin);
-        position: relative;
-        transform: rotate(-45deg);
+.box.wrap {
+    width: var(--box-wrapper-width);
+    height: var(--box-wrapper-height);
+    margin: var(--box-wrapper-margin);
+    position: relative;
+    transform: rotate(-45deg);
+}
 
-        .box {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            background: rgba(135, 0, 0, 0.6);
-            background: linear-gradient(
-                to right,
-                #141562,
-                #486fbc,
-                #eab5a1,
-                #8dd6ff,
-                #4973c9,
-                #d07ca7,
-                #f4915e,
-                #f5919e,
-                #b46f89,
-                #141562,
-                #486fbc
-            );
-            background-position: 0% 50%;
-            background-size: 1000% 1000%;
-            visibility: hidden;
+.box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(135, 0, 0, 0.6);
+    background: linear-gradient(
+        to right,
+        #141562,
+        #486fbc,
+        #eab5a1,
+        #8dd6ff,
+        #4973c9,
+        #d07ca7,
+        #f4915e,
+        #f5919e,
+        #b46f89,
+        #141562,
+        #486fbc
+    );
+    background-position: 0% 50%;
+    background-size: 1000% 1000%;
+    visibility: hidden;
+}
 
-            &.one {
-                animation: moveGradient 8s infinite, oneMove 3.5s infinite;
-            }
+.one {
+    animation: moveGradient 8s infinite, oneMove 3.5s infinite;
+}
 
-            &.two {
-                animation: moveGradient 8s infinite,
-                    twoMove 3.5s 0.15s infinite;
-            }
+.two {
+    animation: moveGradient 8s infinite,
+        twoMove 3.5s 0.15s infinite;
+}
 
-            &.three {
-                animation: moveGradient 8s infinite,
-                    threeMove 3.5s 0.3s infinite;
-            }
+.three {
+    animation: moveGradient 8s infinite,
+        threeMove 3.5s 0.3s infinite;
+}
 
-            &.four {
-                animation: moveGradient 8s infinite,
-                    fourMove 3.5s 0.575s infinite;
-            }
+.four {
+    animation: moveGradient 8s infinite,
+        fourMove 3.5s 0.575s infinite;
+}
 
-            &.five {
-                animation: moveGradient 8s infinite,
-                    fiveMove 3.5s 0.725s infinite;
-            }
+.five {
+    animation: moveGradient 8s infinite,
+        fiveMove 3.5s 0.725s infinite;
+}
 
-            &.six {
-                animation: moveGradient 8s infinite,
-                    sixMove 3.5s 0.875s infinite;
-            }
-        }
-    }
+.six {
+    animation: moveGradient 8s infinite,
+        sixMove 3.5s 0.875s infinite;
 }
 
 @keyframes moveGradient {
