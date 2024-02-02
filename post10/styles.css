@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&display=swap");
+
+:root {
+  --back-img: url(data/images/abdujalil-qoqonov.png);
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  /* overflow: hidden; */
+  font-family: "Inconsolata", monospace;
+  background: url(data/images/back-pic.jpeg);
+  color: white;
+  background-size: cover;
+}
+
+.main {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 350px;
+  height: 600px;
+  border: 5px rgba(255, 255, 255, 0.7) solid;
+  padding: 20px 30px;
+  margin: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 40px rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 25px;
+}
+
+.back-button {
+  display: flex;
+  width: 40px;
+  aspect-ratio: 1 / 1;
+  align-items: center;
+  justify-content: center;
+  border: 2px transparent solid;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.back-arrow {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 10px;
+  position: relative;
+}
+
+.back-arrow::before {
+  content: "";
+  width: 15px;
+  height: 3px;
+  position: absolute;
+  background: white;
+  transform-origin: left;
+  transform: rotate(-45deg) translateY(1px);
+  border-radius: 10px;
+}
+
+.back-arrow::after {
+  content: "";
+  width: 15px;
+  height: 3px;
+  position: absolute;
+  background: white;
+  transform-origin: left;
+  transform: rotate(45deg) translateY(-1px);
+  border-radius: 10px;
+}
+
+.back-button:hover .back-arrow::after,
+.back-button:hover .back-arrow::before {
+  animation: animate 300ms linear;
+}
+
+.back-button:hover .back-arrow {
+  animation: animate2 150ms linear;
+}
+
+@keyframes animate {
+  from {
+    width: 0;
+  }
+  to {
+    width: 15px;
+  }
+}
+
+@keyframes animate2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 25px;
+  }
+}
+
+.song-count {
+  font-size: 20px;
+  width: 60px;
+  height: 20px;
+}
+
+.more-button {
+  width: 40px;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.more-button div {
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  transition: all 300ms ease-in-out;
+}
+
+.more-button:hover div {
+  width: 35px;
+  height: 4px;
+  border-radius: 10px;
+}
+
+.details {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.details .song-cover:first-child {
+  display: grid;
+  place-items: center;
+  width: 300px;
+  aspect-ratio: 1 / 1;
+  margin: 10px 40px;
+  position: relative;
+}
+
+.details .song-cover:first-child::before {
+  content: "";
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  background: var(--back-img);
+  filter: blur(10px);
+}
+
+.big-img {
+  width: 90%;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  object-position: center;
+  object-fit: cover;
+  z-index: 1;
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+  border: 1px rgba(0, 0, 0, 0.2) solid;
+}
+
+.details .song-name,
+.details .song-artist {
+  margin: 0;
+}
+
+.details .song-name {
+  font-size: 30px;
+  font-weight: 600;
+  text-wrap: nowrap;
+  margin-left: 40px;
+  width: 300px;
+  padding: 5px 0px;
+  animation: carousel 8s infinite linear;
+  animation-play-state: paused;
+}
+
+.details .song-name:nth-child(2) {
+  margin-left: 200px;
+}
+
+@keyframes carousel {
+  100% {
+    transform: translateX(calc(-100% - 200px));
+  }
+}
+
+.info {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.details .song-artist {
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-wrap: nowrap;
+}
+
+.img-info {
+  height: 100%;
+}
+
+.small-image {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
+  animation: rotating 5s infinite linear;
+  animation-play-state: paused;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.artist-info {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+  height: 45px;
+}
+
+.durationing {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.slider {
+  background-color: rgb(33, 127, 133);
+  width: 60%;
+  height: 2px;
+  border-radius: 10px;
+  border: 1px solid white;
+  align-self: center;
+  position: relative;
+  cursor: pointer;
+  --width: 0%;
+}
+
+.slider::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  left: calc(var(--width) - 5px);
+  top: -4px;
+  cursor: pointer;
+}
+
+.slider::after {
+  content: "";
+  width: var(--width);
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  transition: all linear 10ms;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.buttons > div:not([class="playing-navigation"]) {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.playing-navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.playing-navigation > div {
+  font-size: 35px;
+  margin: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.playing-navigation div:nth-child(2) {
+  font-size: 50px;
+}
+
+.shuffle-button {
+  border: 1px solid rgba(255, 255, 255, 0);
+  padding: 5px;
+  border-radius: 5px;
+  transition: all 150ms ease-in-out;
+}

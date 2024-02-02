@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music player</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <div class="back-button">
+          <div class="back-arrow"></div>
+        </div>
+
+        <div class="song-count">
+          <span id="current">1</span> / <span id="total">7</span>
+        </div>
+
+        <div class="more-button">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="song-cover">
+          <img
+            src="data/images/abdujalil-qoqonov.png"
+            alt="Song cover image"
+            class="big-img"
+          />
+        </div>
+        <div class="info">
+          <div class="song-name" id="songName1">Kechikkan sevgim</div>
+          <div class="song-name" id="songName2">Kechikkan sevgim</div>
+        </div>
+        <div class="artist-info">
+          <div class="img-info">
+            <img
+              src="data/images/abdujalil-qoqonov.png"
+              alt="Small image"
+              class="small-image"
+            />
+          </div>
+          <div class="song-artist">Abdujalil Qo'qonov</div>
+        </div>
+      </div>
+
+      <div class="durationing">
+        <div class="current-time">00:00</div>
+        <div class="slider"></div>
+        <div class="lefted-time">-00:00</div>
+      </div>
+
+      <div class="buttons">
+        <div class="shuffle-button">
+          <i class="bx bx-shuffle"></i>
+        </div>
+
+        <div class="playing-navigation">
+          <div><i class="bx bx-skip-previous"></i></div>
+          <div><i class="bx bx-play" data-play-pause="true"></i></div>
+          <div><i class="bx bx-skip-next"></i></div>
+        </div>
+
+        <div class="song-list">
+          <i class="bx bxs-playlist"></i>
+        </div>
+      </div>
+    </div>
+
+    <script src="songs.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
