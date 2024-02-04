@@ -131,10 +131,12 @@ playpauseBtn.addEventListener("click", () => {
 let shuffling = false;
 shuffleBtn.addEventListener("click", () => {
   if (!shuffling) {
-    shuffleBtn.style.border = "1px solid rgba(255, 255, 255, 0.5)";
+    shuffleBtn.style.color = "rgb(82, 136, 193)";
+    // shuffleBtn.style.border = "1px solid rgba(255, 255, 255, 0.5)";
     shuffling = true;
   } else {
-    shuffleBtn.style.border = "1px solid rgba(255, 255, 255, 0)";
+    shuffleBtn.style.color = "white";
+    // shuffleBtn.style.border = "1px solid rgba(255, 255, 255, 0)";
     shuffling = false;
   }
 });
