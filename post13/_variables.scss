@@ -1,0 +1,30 @@
+$clr-html: #ea580c;
+$clr-css: #0fa2e5;
+$clr-js: #f59e0b;
+$clr-vue: #14b8a6;
+$clr-react: #2563eb;
+$clr-angular: #dc3136;
+$clr-sass: #ce669e;
+$clr-node: #8cc84b;
+
+$clr-html-hover: #5e2100;
+$clr-css-hover: #013953;
+$clr-js-hover: #5c3d08;
+$clr-vue-hover: #09403a;
+$clr-react-hover: #0a1b3e;
+$clr-angular-hover: #450e10;
+$clr-sass-hover: #391d2c;
+$clr-node-hover: #263615;
+
+$clr-bg: #172329;
+
+@mixin displayGrid {
+    display: grid;
+    place-items: center;
+}
+
+@mixin absoluteCenter {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}

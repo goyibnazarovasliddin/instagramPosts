@@ -1,0 +1,281 @@
+body {
+  overflow: hidden;
+  background-color: #172329;
+}
+body main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 250px;
+  padding-left: 50px;
+  -moz-column-gap: 250px;
+       column-gap: 250px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body main .left-side {
+  font-size: 40px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: white;
+  text-shadow: 0 0 10px #01ccbf, 0 0 15px hsl(176, 99%, 40%), 0 0 20px #01ccbf;
+}
+body main .left-side strong {
+  color: red;
+}
+body main .left-side p::-moz-selection, body main .left-side strong::-moz-selection {
+  background: white;
+  color: #01ccbf;
+  text-shadow: none;
+}
+body main .left-side p::selection,
+body main .left-side strong::selection {
+  background: white;
+  color: #01ccbf;
+  text-shadow: none;
+}
+body main .right-side {
+  display: grid;
+  place-items: center;
+}
+body main .right-side .center {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 200px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+body main .right-side .center .image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  z-index: 10;
+}
+body main .right-side .center .image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #172329;
+  box-shadow: 0 0 10px #01ccbf, 0 0 15px #01ccbf, 0 0 20px #01ccbf, 0 0 25px #01ccbf, 0 0 10px #01ccbf inset;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px white solid;
+  transition: opacity 500ms ease;
+}
+body main .right-side .center .image img:hover:last-child {
+  opacity: 0;
+}
+body main .right-side .center ul {
+  --rotating-play-state: running;
+  --scaling-play-state: running;
+  --speed: 20s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  animation: rotating var(--speed) infinite linear;
+  transform-origin: center;
+}
+body main .right-side .center ul:hover {
+  animation-play-state: paused;
+  --rotating-play-state: paused;
+}
+body main .right-side .center ul li {
+  list-style: none;
+  position: absolute;
+  font-weight: bold;
+  width: 100px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+body main .right-side .center ul li a {
+  margin: 0;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 500ms ease;
+  background-color: black;
+  text-align: center;
+}
+body main .right-side .center ul li:hover a {
+  opacity: 1;
+}
+body main .right-side .center ul li:hover a, body main .right-side .center ul li:hover i {
+  cursor: pointer;
+  --scaling-play-state: paused;
+}
+body main .right-side .center ul li a,
+body main .right-side .center ul li i {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  box-shadow: 0 0 10px #01ccbf, 0 0 10px #01ccbf inset;
+  animation: scaling 0.8s var(--animate-delay) infinite linear alternate var(--scaling-play-state), rotating var(--speed) infinite linear reverse var(--rotating-play-state);
+}
+body main .right-side .center ul li i {
+  font-size: 60px;
+  background-color: aqua;
+}
+body main .right-side .center ul li:nth-child(1) {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+body main .right-side .center ul li:nth-child(1) a,
+body main .right-side .center ul li:nth-child(1) i {
+  --animate-delay: 0ms;
+}
+body main .right-side .center ul li:nth-child(2) {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+body main .right-side .center ul li:nth-child(2) a,
+body main .right-side .center ul li:nth-child(2) i {
+  --animate-delay: 500ms;
+}
+body main .right-side .center ul li:nth-child(3) {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+body main .right-side .center ul li:nth-child(3) a,
+body main .right-side .center ul li:nth-child(3) i {
+  --animate-delay: 1000ms;
+}
+body main .right-side .center ul li:nth-child(4) {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+body main .right-side .center ul li:nth-child(4) a,
+body main .right-side .center ul li:nth-child(4) i {
+  --animate-delay: 1500ms;
+}
+body main .right-side .center ul li:nth-child(5) {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+body main .right-side .center ul li:nth-child(5) a,
+body main .right-side .center ul li:nth-child(5) i {
+  --animate-delay: 2000ms;
+}
+body main .right-side .center ul li:nth-child(6) {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+body main .right-side .center ul li:nth-child(6) a,
+body main .right-side .center ul li:nth-child(6) i {
+  --animate-delay: 2500ms;
+}
+body main .right-side .center ul li:nth-child(7) {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+body main .right-side .center ul li:nth-child(7) a,
+body main .right-side .center ul li:nth-child(7) i {
+  --animate-delay: 3000ms;
+}
+body main .right-side .center ul li:nth-child(8) {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+body main .right-side .center ul li:nth-child(8) a,
+body main .right-side .center ul li:nth-child(8) i {
+  --animate-delay: 3500ms;
+}
+body main .right-side .center ul li:first-child {
+  transform: translate(15rem, 0);
+}
+body main .right-side .center ul li:first-child i {
+  background: #ea580c;
+}
+body main .right-side .center ul li:first-child a {
+  background: #5e2100;
+}
+body main .right-side .center ul li:nth-child(2) {
+  transform: translate(10.6rem, 10.6rem);
+}
+body main .right-side .center ul li:nth-child(2) i {
+  background: #0fa2e5;
+}
+body main .right-side .center ul li:nth-child(2) a {
+  background: #013953;
+}
+body main .right-side .center ul li:nth-child(3) {
+  transform: translate(0, 15rem);
+}
+body main .right-side .center ul li:nth-child(3) i {
+  background: #f59e0b;
+}
+body main .right-side .center ul li:nth-child(3) a {
+  background: #5c3d08;
+}
+body main .right-side .center ul li:nth-child(4) {
+  transform: translate(-10.6rem, 10.6rem);
+}
+body main .right-side .center ul li:nth-child(4) i {
+  background: #14b8a6;
+}
+body main .right-side .center ul li:nth-child(4) a {
+  background: #09403a;
+}
+body main .right-side .center ul li:nth-child(5) {
+  transform: translate(-15rem, 0);
+}
+body main .right-side .center ul li:nth-child(5) i {
+  background: #2563eb;
+}
+body main .right-side .center ul li:nth-child(5) a {
+  background: #0a1b3e;
+}
+body main .right-side .center ul li:nth-child(6) {
+  transform: translate(-10.6rem, -10.6rem);
+}
+body main .right-side .center ul li:nth-child(6) i {
+  background: #dc3136;
+}
+body main .right-side .center ul li:nth-child(6) a {
+  background: #450e10;
+}
+body main .right-side .center ul li:nth-child(7) {
+  transform: translate(0, -15rem);
+}
+body main .right-side .center ul li:nth-child(7) i {
+  background: #ce669e;
+}
+body main .right-side .center ul li:nth-child(7) a {
+  background: #391d2c;
+}
+body main .right-side .center ul li:nth-child(8) {
+  transform: translate(10.6rem, -10.6rem);
+}
+body main .right-side .center ul li:nth-child(8) i {
+  background: #8cc84b;
+}
+body main .right-side .center ul li:nth-child(8) a {
+  background: #263615;
+}
+
+@keyframes scaling {
+  100% {
+    scale: 1.15;
+  }
+}
+@keyframes rotating {
+  100% {
+    transform: rotate(1turn);
+  }
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,262 @@
+@import "./variables";
+
+body {
+    overflow: hidden;
+    background-color: $clr-bg;
+
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 250px;
+        padding-left: 50px;
+        column-gap: 250px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+            sans-serif;
+
+        .left-side {
+            font-size: 40px;
+            text-transform: uppercase;
+            line-height: 1.5;
+            color: white;
+            text-shadow: 0 0 10px #01ccbf, 0 0 15px hsl(176, 99%, 40%),
+                0 0 20px #01ccbf;
+
+            strong {
+                color: red;
+            }
+
+            p::selection,
+            strong::selection {
+                background: white;
+                color: #01ccbf;
+                text-shadow: none;
+            }
+        }
+
+        .right-side {
+            @include displayGrid();
+
+            .center {
+                @include displayGrid();
+                position: relative;
+                width: 200px;
+                aspect-ratio: 1 / 1;
+                border-radius: 50%;
+
+                .image {
+                    width: 100%;
+                    aspect-ratio: 1 / 1;
+                    z-index: 10;
+
+                    img {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background: $clr-bg;
+                        box-shadow: 0 0 10px #01ccbf, 0 0 15px #01ccbf,
+                            0 0 20px #01ccbf, 0 0 25px #01ccbf,
+                            0 0 10px #01ccbf inset;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        border: 1px white solid;
+                        transition: opacity 500ms ease;
+
+                        &:hover:last-child {
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                ul {
+                    --rotating-play-state: running;
+                    --scaling-play-state: running;
+                    --speed: 20s;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                    @include absoluteCenter();
+                    animation: rotating var(--speed) infinite linear;
+                    transform-origin: center;
+
+                    &:hover {
+                        animation-play-state: paused;
+                        --rotating-play-state: paused;
+                    }
+
+                    li {
+                        list-style: none;
+                        position: absolute;
+                        font-weight: bold;
+                        width: 100px;
+                        aspect-ratio: 1;
+                        @include displayGrid();
+                        border-radius: 50%;
+
+                        a {
+                            margin: 0;
+                            position: absolute;
+                            opacity: 0;
+                            transition: opacity 500ms ease;
+                            background-color: black;
+                            text-align: center;
+                        }
+
+                        &:hover a {
+                            opacity: 1;
+                        }
+
+                        &:hover a,
+                        &:hover i {
+                            cursor: pointer;
+                            --scaling-play-state: paused;
+                        }
+
+                        a,
+                        i {
+                            @include displayGrid();
+                            width: 100%;
+                            aspect-ratio: 1;
+                            padding: 10px;
+                            border-radius: 50%;
+                            color: white;
+                            box-shadow: 0 0 10px #01ccbf, 0 0 10px #01ccbf inset;
+                            animation: scaling 0.8s var(--animate-delay)
+                                    infinite linear alternate
+                                    var(--scaling-play-state),
+                                rotating var(--speed) infinite linear reverse
+                                    var(--rotating-play-state);
+                        }
+
+                        i {
+                            font-size: 60px;
+                            background-color: aqua;
+                        }
+
+                        @for $i from 1 through 8 {
+                            &:nth-child(#{ $i }) {
+                                @include absoluteCenter();
+
+                                a,
+                                i {
+                                    --animate-delay: #{500ms * ($i - 1)};
+                                }
+                            }
+                        }
+
+                        &:first-child {
+                            i {
+                                background: $clr-html;
+                            }
+
+                            a {
+                                background: $clr-html-hover;
+                            }
+
+                            transform: translate(15rem, 0);
+                        }
+
+                        &:nth-child(2) {
+                            i {
+                                background: $clr-css;
+                            }
+
+                            a {
+                                background: $clr-css-hover;
+                            }
+
+                            transform: translate(10.6rem, 10.6rem);
+                        }
+
+                        &:nth-child(3) {
+                            i {
+                                background: $clr-js;
+                            }
+
+                            a {
+                                background: $clr-js-hover;
+                            }
+
+                            transform: translate(0, 15rem);
+                        }
+
+                        &:nth-child(4) {
+                            i {
+                                background: $clr-vue;
+                            }
+
+                            a {
+                                background: $clr-vue-hover;
+                            }
+
+                            transform: translate(-10.6rem, 10.6rem);
+                        }
+
+                        &:nth-child(5) {
+                            i {
+                                background: $clr-react;
+                            }
+
+                            a {
+                                background: $clr-react-hover;
+                            }
+
+                            transform: translate(-15rem, 0);
+                        }
+
+                        &:nth-child(6) {
+                            i {
+                                background: $clr-angular;
+                            }
+
+                            a {
+                                background: $clr-angular-hover;
+                            }
+
+                            transform: translate(-10.6rem, -10.6rem);
+                        }
+
+                        &:nth-child(7) {
+                            i {
+                                background: $clr-sass;
+                            }
+
+                            a {
+                                background: $clr-sass-hover;
+                            }
+
+                            transform: translate(0, -15rem);
+                        }
+
+                        &:nth-child(8) {
+                            i {
+                                background: $clr-node;
+                            }
+
+                            a {
+                                background: $clr-node-hover;
+                            }
+
+                            transform: translate(10.6rem, -10.6rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes scaling {
+    100% {
+        scale: 1.15;
+    }
+}
+
+@keyframes rotating {
+    100% {
+        transform: rotate(1turn);
+    }
+}
