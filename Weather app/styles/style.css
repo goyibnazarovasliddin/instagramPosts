@@ -1,0 +1,264 @@
+body {
+    width: 100dvw;
+    height: 100dvh;
+    background-color: rgb(17, 16, 21);
+    color: white;
+    display: flex;
+    align-items: center;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    overflow: hidden;
+}
+
+.main {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px;   
+    border: 1px white solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.left {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    border: 1px transparent solid;
+    margin: 20px;
+    row-gap: 20px;
+    align-items: center;
+}
+
+.current-weather {
+    width: 92%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    border: 2px transparent solid;
+    border-radius: 10px;
+    margin: 10px;
+    gap: 100px;
+    align-items: center;
+    background-color: rgb(27, 27, 29);
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.current-weather:hover {
+    scale: 1.05;
+}
+
+.current-left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.current-loc {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.current-date {
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.current-weth {
+    font-size: 60px;
+    margin-right: -70px;
+}
+
+.current-weth-image {
+    width: 120px;
+    height: 120px;
+}
+
+.hours-weather {
+    width: 900px;
+    display: flex;
+    border: 2px transparent solid;
+    border-radius: 10px;    
+    margin: 11px;
+    gap: 22px;
+    overflow: hidden;
+}
+
+.hourly {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: rgb(27, 27, 29);
+    transition: all 150ms ease-in-out;
+    cursor: pointer;
+}
+
+.hourly:hover {
+    scale: 1.09;
+}
+
+.hourly-img {
+    width: 50px;
+    height: 50px;
+}
+
+
+.right {
+    width: 450px;
+    border: 2px transparent solid;
+    border-radius: 10px;
+    padding: 20px 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    mask: linear-gradient(white 90%, transparent);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(111, 111, 114);
+    border-radius: 100vh;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(27, 27, 29);
+    border-radius: 100vh;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background: rgb(53, 53, 53);
+}
+
+.districts {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border: 1px transparent solid;
+    padding: 2px 10px;
+    background-color: rgb(27, 27, 29);
+    margin-block: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    animation: entering 2s ease-in-out;
+    animation-timeline: view();
+    animation-range: entry-crossing;
+}
+
+@keyframes entering {
+    from { scale: 0;};
+    to { scale: 1};
+}
+
+.districts:hover {
+    opacity: 0.7;
+    border-color: white;
+}
+
+.active {
+    background-color: rgb(174, 202, 223);
+    color: black;
+}
+
+.district-left,
+.district-right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.district-left {
+    align-items: start;
+}
+
+.place-name {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.place-weather {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.district-right {
+    align-items: center;
+}
+
+.place-weth-img {
+    width: 70px;
+    height: 70px;
+}
+
+.weth-val {
+    font-size: 25px;
+    margin-top: -10px;
+}
+
+.week-weather {
+    display: flex;
+    border: 1px transparent solid;
+    border-radius: 10px;
+    gap: 25px;
+    animation: animate 15s infinite linear;
+}
+
+@keyframes animate {
+    100% { transform: translateX(calc(-100% - 24px));}
+}
+
+.weekly {
+    border: 1px transparent solid;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 25px;
+    background-color: rgb(27, 27, 29);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.weekly:hover {
+    scale: 1.09;
+    --play-state: paused;
+}
+
+.weekly-img {
+    width: 80px;
+    height: 80px;
+}
+
+.day {
+    font-size: 20px;
+}
+hr {
+    width: 90%;
+    margin: 5px auto;
+    opacity: 0.3;
+}
+
+.wek {
+    display: flex;
+    width: 930px;
+    mask: linear-gradient(90deg, transparent, white 40%, white 60%, transparent);
+    align-items: center;
+    column-gap: 20px;
+}
+
+
+
