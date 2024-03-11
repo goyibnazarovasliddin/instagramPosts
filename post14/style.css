@@ -1,0 +1,26 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+p {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	translate: -50% -50%;
+	font-size: 150px;
+	color: white;
+	opacity: 0.3;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-weight: bold;
+	text-transform: lowercase;
+}
+#canvas {
+    cursor: pointer;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(50,244,29,1) 0%, rgba(90,216,241,0.9994048644848564) 100%);
+}
