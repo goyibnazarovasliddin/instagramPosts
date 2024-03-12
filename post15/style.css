@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    width: 100dvw;
+    height: 100dvh;
+    display: grid;
+    place-items: center;
+    position: relative;
+    perspective: 1000px;
+}
+
+.bg {
+    position: absolute;
+    width: 100%;
+}
+
+.top {
+    height: 60%;
+    top: 0;
+    background: linear-gradient(#75bbec, #005f97);
+}
+
+.bottom {
+    height: 40%;
+    bottom: 0;
+    background: linear-gradient(#0070ab, #124d81, #0a0d17);
+}
+
+.middle {
+    width: 200px;
+    height: 200px;
+    z-index: 2;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    position: relative;
+    animation: animate 8s linear infinite;
+    animation-delay: 1s;
+    margin-bottom: 50px;
+}
+
+.middle::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.6);
+    transform-style: preserve-3d;
+    transform: rotateX(90deg);
+    top: 250px;
+    left: 50px;
+    filter: blur(20px);
+}
+
+@keyframes animate {
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.triangle {
+    position: absolute;
+    background-color: #1e253f;
+    opacity: 0.7;
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    transform-style: preserve-3d;
+    animation: change-bg 8s linear infinite;
+}
+
+.top-tr {
+    transform-origin: top;
+    top: 0;
+    width: 90px;
+    height: 200px;
+}
+
+.top-front {
+    opacity: 0.3;
+    left: 55px;
+    transform: rotateX(13deg);
+    animation-delay: 1s;
+}
+
+.top-left {
+    left: 55px;
+    transform: rotateY(-90deg) rotateX(-13deg);
+    animation-delay: 7s;
+}
+.top-right {
+    right: 55px;
+    transform: rotateX(-13deg);
+    animation-delay: 5s;
+}
+
+.top-back {
+    right: 55px;
+    transform: rotateY(90deg) rotateX(-13deg);
+    animation-delay: 3s;
+}
+
+.bottom-tr {
+    transform-origin: top;
+    bottom: calc(-100% + 15.8px);
+    width: 90px;
+    height: 100px;
+}
+
+.bottom-front {
+    left: 55px;
+    rotate: 180deg;
+    transform: rotateX(26.7deg);
+    animation-delay: 1s;
+}
+
+.bottom-left {
+    left: 55px;
+    rotate: 180deg;
+    transform: rotateY(-90deg) rotateX(-26.7deg);
+    animation-delay: 3s;
+}
+.bottom-right {
+    right: 55px;
+    rotate: 180deg;
+    transform: rotateX(-26.7deg);
+    animation-delay: 5s;
+}
+
+.bottom-back {
+    right: 55px;
+    rotate: 180deg;
+    transform: rotateY(90deg) rotateX(-26.7deg);
+    animation-delay: 7s;
+}
+
+@keyframes change-bg {
+    10% {
+        background-color: #fafeff;
+    } 
+    40%,
+    20%,
+    30%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90%,
+    100% {
+        background-color: #1e253f;
+    }
+}
+
